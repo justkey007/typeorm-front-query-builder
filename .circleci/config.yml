@@ -48,8 +48,8 @@ workflows:
 
   default:
     jobs:
-      - unit_tests:
-      - build:
+      - unit_tests
+      - build
       - publish:
           requires:
             - unit_tests
