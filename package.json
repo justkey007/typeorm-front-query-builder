@@ -1,0 +1,35 @@
+{
+  "name": "typeorm-front-query-builder",
+  "version": "1.0.0",
+  "description": "Easily transform an TypeORM query to url query",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "build:watch": "tsc -p . --watch",
+    "test": "jest",
+    "test:cov": "jest --coverage",
+    "test:watch": "jest --watch",
+    "codecov": "codecov"
+  },
+  "keywords": [
+    "typeorm",
+    "express",
+    "query string",
+    "query",
+    "builder",
+    "nestjs",
+    "nest"
+  ],
+  "author": "justkey007",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^24.9.0",
+    "@types/node": "^13.1.8",
+    "codecov": "^3.6.1",
+    "express": "^4.17.1",
+    "jest": "^25.2.4",
+    "ts-jest": "^25.3.0",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {}
+}
