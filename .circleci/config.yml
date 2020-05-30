@@ -7,6 +7,22 @@ executors:
     working_directory: ~/typeorm-front-query-builder
 
 jobs:
+
+  setup:
+    executor: node_container
+    steps:
+      - checkout
+      - restore_cache:
+          key: typeorm-front-query-builder-{{ .Branch }}-{{ checksum "package-lock.json" }}
+      - run: npm install
+      - save_cache:
+          key: typeorm-front-query-builder-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          paths: "node_modules"
+      - persist_to_workspace:
+          root: ~/typeorm-front-query-builder
+          paths:
+            - .
+
   unit_tests:
     executor: node_container
     steps:
@@ -14,7 +30,7 @@ jobs:
           at: ~/typeorm-front-query-builder
       - run: npm run test:cov
       - run: npm run codecov
-  
+
   build:
     executor: node_container
     steps:
@@ -46,11 +62,16 @@ jobs:
           # command: cd dist && npm publish
 
 workflows:
-  version: 2
+
   default:
     jobs:
-      - unit_tests
-      - build
+      - setup
+      - unit_tests:
+          requires:
+            - setup
+      - build:
+          requires:
+            - setup
       - publish:
           requires:
             - unit_tests
