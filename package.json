@@ -1,6 +1,6 @@
 {
   "name": "typeorm-front-query-builder",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Easily transform an TypeORM query to url query",
   "scripts": {
     "build": "tsc -p .",

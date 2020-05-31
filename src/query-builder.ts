@@ -148,7 +148,7 @@ export class Query {
   public orderBy(field: string, by: 'ASC' | 'DESC'): Query {
     if (!this.queryObject.order) this.queryObject.order = '';
     this.queryObject.order += `${this.queryObject.order ? ',' : ''}${
-      by === 'ASC' ? '+' : '-'
+      by === 'ASC' ? '^' : '-'
     }${field}`;
     return this;
   }

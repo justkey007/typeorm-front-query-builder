@@ -31,7 +31,7 @@ describe('Test Query Builder', () => {
       .fieldBetween('age', 18, 45)
       .orderBy('name', 'ASC')
       .orderBy('size', 'DESC');
-    expect(query.toString()).toEqual('age__between=18,45&order=+name,-size');
+    expect(query.toString()).toEqual('age__between=18,45&order=^name,-size');
   });
 
   it('Should set relations', () => {
