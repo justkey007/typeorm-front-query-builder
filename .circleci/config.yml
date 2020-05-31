@@ -58,8 +58,7 @@ jobs:
           command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/typeorm-front-query-builder/dist/.npmrc
       - run:
           name: Change to dist dir & publish
-          command: ls
-          # command: cd dist && npm publish
+          command: cd dist && npm publish
 
 workflows:
 

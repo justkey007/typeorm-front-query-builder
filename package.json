@@ -2,7 +2,6 @@
   "name": "typeorm-front-query-builder",
   "version": "1.0.0",
   "description": "Easily transform an TypeORM query to url query",
-  "main": "index.js",
   "scripts": {
     "build": "tsc -p .",
     "build:watch": "tsc -p . --watch",
